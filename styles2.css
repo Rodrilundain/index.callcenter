@@ -78,7 +78,7 @@ body {
 #tit-uno {
 	font-size: 80px;
 	font-weight: 500;
-	color: #FFFFFF;
+	color:hsl(4, 90%, 40%);;
 	margin-top: -250px;
 	margin-left: 285px;
 }
@@ -86,7 +86,7 @@ body {
 #subtit {
 	font-size: 80px;
 	font-weight: 500;
-	color: #FFFFFF;
+	color: hsl(4, 90%, 40%);;
 	margin-top: -70px;
 	margin-left: 285px;
 }
