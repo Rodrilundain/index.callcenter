@@ -1,23 +1,17 @@
+/* General styles */
 body {
 	padding: 0;
 	margin: 0;
 	font-family: Roboto;
 	font-weight: 400;
-	/*font-size: 100%;*/
 }
+
 .roboto-regular {
 	font-family: "Roboto", sans-serif;
 	font-weight: 100;
 	font-style: normal;
 }
-/*#cont {
-	padding: 0px;
-	margin: 0 auto;
-	background-color: #EADCDC;
-	width: 100%;
-	height: 700px;
-	max-width: 100%;
-}*/
+
 #cont {
 	width: 100%;
 	height: 100px;
@@ -25,14 +19,15 @@ body {
 	margin: 0 auto;
 	background-color: #13314E;
 }
+
 #cont-nav {
 	width: 1366px;
 	height: 100px;
 	max-width: 100%;
 	margin: 0 auto;
 	display: block;
-	/*background-color: #c7e09b;*/
 }
+
 #logo {
 	width: 100%;
 	padding: 0;
@@ -40,13 +35,15 @@ body {
 	float: left;
 	margin-top: 25px;
 }
-#lista ul{
+
+#lista ul {
 	list-style: none;
 	display: inline;
 	padding: 0px;
 	margin: 0px;
 }
-#lista ul li a{
+
+#lista ul li a {
 	text-decoration: none;
 	float: right;
 	padding-left: 10px;
@@ -54,25 +51,22 @@ body {
 	margin-top: 20px;
 	font-size: 13px;
 	color: #ffffff;
+	transition: color 0.3s ease;
 }
-#lista ul li a :hover{
 
-	color: hsl(167, 100%, 50%);
+/* Change color to red on hover */
+#lista ul li a:hover {
+	color: red;
 }
-.slide{
+
+.slide {
 	width: 100%;
 	height: 500px;
 	margin: auto;
 	padding: 0;
 }
-/*.slider{
-	background-image: url("img/SlideIndex.jpg");
-	padding: 0;
-	margin: auto;
-	width: 100%;
-	height: 500px;
-}*/
-#cont-tit-bnr{
+
+#cont-tit-bnr {
 	padding: 0px;
 	margin: 0 auto;
 	margin-top: 0px;
@@ -80,54 +74,46 @@ body {
 	height: 100%;
 	background-repeat: no-repeat;
 }
-#tit-uno{
+
+#tit-uno {
 	font-size: 80px;
 	font-weight: 500;
 	color: #FFFFFF;
 	margin-top: -250px;
 	margin-left: 285px;
 }
-#subtit{
+
+#subtit {
 	font-size: 80px;
 	font-weight: 500;
 	color: #FFFFFF;
 	margin-top: -70px;
 	margin-left: 285px;
 }
-#content{
+
+#content {
 	padding: 30px;
 	margin-top: 100px;
-	/*background-color: #73a089;*/
 }
-.titulos h1{
+
+.titulos h1 {
 	width: 1366px;
 	height: 80px;
 	margin: auto;
 	text-align: center;
 	font-size: 40px;
 	color: hsl(0, 0%, 100%);
-	/*background-color: #00f0ff;*/
 }
-.ContIcons{
+
+.ContIcons {
 	width: 1366px;
 	height: auto;
 	overflow: auto;
 	margin: auto;
 	padding: 10px 5px 5px 5px;
-	/*background-color: #823ef2;*/
-}
-.foto{
-	width: 200px;
-	height: 200px;
-	margin: auto;
-	border-style: solid;
-	border-width: 10px;
-	border-radius: 200px;
-	border-color: #e2001a;
-	/*background-color: #fa8d00;*/
 }
 
-.icon{
+.icon {
 	width: 445px;
 	height: 300px;
 	padding: 0px;
@@ -136,15 +122,16 @@ body {
 	text-align: center;
 	float: left;
 	display: inline-block;
-	/*background-color: #e3f23e;*/
 }
-.icon p a{
-	color: #13314E;
-	font-size: 50px;
-}
+
 .icon a {
 	color: #13314E;
 	font-size: 15px;
 	text-decoration: none;
+	transition: color 0.3s ease;
+}
 
+/* Change link color to red on hover */
+.icon a:hover {
+	color: red;
 }
