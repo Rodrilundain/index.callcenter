@@ -37,7 +37,7 @@ body {
 
 #menu ul li a {
     text-decoration: none;
-    font-size: 13px;
+    font-size: 25px;
     color: #ffffff;
     transition: color 0.3s ease;
 }
