@@ -1,137 +1,139 @@
-/* General styles */
+/* General */
 body {
-	padding: 0;
-	margin: 0;
-	font-family: Roboto;
-	font-weight: 400;
-}
-
-.roboto-regular {
-	font-family: "Roboto", sans-serif;
-	font-weight: 100;
-	font-style: normal;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
 #cont {
-	width: 100%;
-	height: 100px;
-	max-width: 100%;
-	margin: 0 auto;
-	background-color: #13314E;
+    width: 100%;
+    background-color: #054c8a;
 }
 
+/* Encabezado */
 #cont-nav {
-	width: 1366px;
-	height: 100px;
-	max-width: 100%;
-	margin: 0 auto;
-	display: block;
+    max-width: 1366px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+   
+    height: 100px;
+    padding: 0 20px;
 }
 
-#logo {
-	width: 100%;
-	padding: 0;
-	border: none;
-	float: left;
-	margin-top: 25px;
+#logo img {
+    display: block;
 }
 
-#lista ul {
-	list-style: none;
-	display: inline;
-	padding: 0px;
-	margin: 0px;
+#menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
 }
 
-#lista ul li a {
-	text-decoration: none;
-	float: right;
-	padding-left: 10px;
-	padding-right: 10px;
-	margin-top: 20px;
-	font-size: 13px;
-	color: #ffffff;
-	transition: color 0.3s ease;
+#menu ul li {
+    margin: 0 10px;
 }
 
-/* Change color to red on hover */
-#lista ul li a:hover {
-	color: red;
+#menu ul li a {
+    text-decoration: none;
+    font-size: 13px;
+    color: #ffffff;
+    transition: color 0.3s ease;
 }
 
-.slide {
-	width: 100%;
-	height: 500px;
-	margin: auto;
-	padding: 0;
+#menu ul li a:hover {
+    color: red;
 }
 
-#cont-tit-bnr {
-	padding: 0px;
-	margin: 0 auto;
-	margin-top: 0px;
-	width: 1366px;
-	height: 100%;
-	background-repeat: no-repeat;
+/* Botones */
+.icon img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid rgb(5, 78, 189); /* Borde blanco */
+    border-radius: 8px; /* Opcional: esquinas redondeadas */
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-#tit-uno {
-	font-size: 80px;
-	font-weight: 500;
-	color:hsl(4, 90%, 40%);;
-	margin-top: -250px;
-	margin-left: 285px;
-}
-
-#subtit {
-	font-size: 80px;
-	font-weight: 500;
-	color: hsl(4, 90%, 40%);;
-	margin-top: -70px;
-	margin-left: 285px;
-}
-
-#content {
-	padding: 30px;
-	margin-top: 100px;
-}
-
-.titulos h1 {
-	width: 1366px;
-	height: 80px;
-	margin: auto;
-	text-align: center;
-	font-size: 40px;
-	color: hsl(0, 0%, 100%);
-}
-
-.ContIcons {
-	width: 1366px;
-	height: auto;
-	overflow: auto;
-	margin: auto;
-	padding: 10px 5px 5px 5px;
-}
-
-.icon {
-	width: 445px;
-	height: 300px;
-	padding: 0px;
-	margin: 0 5px 2px 5px;
-	color: #e2001a;
-	text-align: center;
-	float: left;
-	display: inline-block;
+.icon img:hover {
+    transform: scale(1.1); /* Efecto de zoom al pasar el mouse */
+    border-color: red; /* Cambiar el color del borde al pasar el mouse */
 }
 
 .icon a {
-	color: #13314E;
-	font-size: 15px;
-	text-decoration: none;
-	transition: color 0.3s ease;
+    text-decoration: none;
+    color: #024c7e;
+    transition: color 0.3s ease;
 }
 
-/* Change link color to red on hover */
 .icon a:hover {
-	color: red;
+    color: red;
+}
+
+/* Contenedor de íconos */
+.ContIcons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.icon {
+    flex: 1 1 calc(16.6% - 20px);
+    max-width: calc(16.6% - 20px);
+    text-align: center;
+}
+
+/* Estilo del botón flotante de WhatsApp */
+#whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: block;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    line-height: 60px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    z-index: 1000;
+}
+
+.whatsapp-button img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px
+}
+
+
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .icon {
+        flex: 1 1 calc(33.33% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .icon {
+        flex: 1 1 calc(50% - 20px);
+    }
 }
