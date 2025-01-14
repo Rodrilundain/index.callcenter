@@ -47,13 +47,13 @@ body {
 }
 
 /* Botones */
-.icon img {
+.icon img 
     max-width: 100%;
     height: auto;
     border: 2px solid rgb(5, 78, 189); /* Borde blanco */
     border-radius: 8px; /* Opcional: esquinas redondeadas */
     transition: transform 0.3s ease, border-color 0.3s ease;
-}
+
 
 .icon img:hover {
     transform: scale(1.1); /* Efecto de zoom al pasar el mouse */
