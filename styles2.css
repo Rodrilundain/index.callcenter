@@ -122,6 +122,36 @@ body {
     box-shadow: 0 4px 8px
 }
 
+/* Estilo para los enlaces en los botones */
+.custom-button {
+    font-size: 12px;
+    padding: 10px 20px;
+    margin: 5px;
+    text-decoration: none;
+    border: 2px solid white;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #054c8a;
+    text-align: center;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.custom-button:hover {
+    background-color: #054c8a;
+    color: white;
+}
+
+/* Estilo para la lista de enlaces */
+ul.custom-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul.custom-list li {
+    display: inline-block;
+    margin: 5px;
+}
 
 
 /* Responsividad */
