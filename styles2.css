@@ -46,6 +46,13 @@ body {
 }
 
 /* Botones */
+.icon {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .icon img {
     max-width: 100%;
     height: auto;
@@ -61,6 +68,9 @@ body {
     text-decoration: none;
     color: #024c7e;
     transition: color 0.3s ease;
+    margin-top: 5px; /* Espacio entre el botón y el título */
+    text-align: center;
+    display: block;
 }
 
 .icon a:hover {
@@ -69,16 +79,22 @@ body {
 
 /* Contenedor de íconos */
 .ContIcons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
     gap: 20px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.icon {
-    flex: 1 1 calc(16.6% - 20px);
-    max-width: calc(16.6% - 20px);
-    text-align: center;
+/* Segunda fila con 8 botones */
+.ContIcons .icon:nth-child(n+10) {
+    grid-column: span 1;
+}
+
+.ContIcons .icon:nth-child(10) {
+    grid-column: 2 / span 1;
 }
 
 /* Contenedor de botones flotantes */
@@ -87,14 +103,15 @@ body {
     bottom: 20px;
     right: 20px;
     display: flex;
-    flex-direction: column; /* Se alinean verticalmente */
-    gap: 10px; /* Espacio entre botones */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
     z-index: 1000;
 }
 
 /* Estilos generales para los botones */
 .floating-buttons a {
-    width: 55.8px; /* 1 cm de diámetro */
+    width: 55.8px;
     height: 55.8px;
     border-radius: 50%;
     display: flex;
@@ -122,15 +139,25 @@ body {
 
 /* Estilos para las imágenes dentro de los botones */
 .floating-buttons a img {
-    width: 80%; /* Ajuste para que la imagen quede bien dentro */
+    width: 80%;
     height: 80%;
     border-radius: 50%;
 }
 
 /* Responsividad */
+@media (max-width: 1024px) {
+    .ContIcons {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
+    .ContIcons {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .floating-buttons {
-        bottom: 45px;
+        flex-direction: column;
         right: 45%;
     }
 }
