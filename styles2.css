@@ -1,4 +1,4 @@
-/* General */
+/* ========== GENERAL ========== */
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
@@ -9,43 +9,85 @@ body {
     background-color: #054c8a;
 }
 
-/* Encabezado */
+/* ========== CABECERA NAV ========== */
 #cont-nav {
     max-width: 1366px;
     margin: 0 auto;
+    padding: 8px 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#nav-bar {
     display: flex;
     align-items: center;
-    height: 100px;
-    padding: 0 20px;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 #logo img {
     display: block;
+    height: 50px;
+}
+
+/* ===== MENÚ PRINCIPAL ===== */
+#menu {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 #menu ul {
     list-style: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
     display: flex;
+    flex-wrap: wrap;            /* 2 filas si no entra */
+    gap: 10px;
+    justify-content: center;
+    max-width: 1100px;
 }
 
-#menu ul li {
-    margin: 0 10px;
+#menu ul li { margin: 0; }
+
+#menu ul li:nth-child(n+10) {      /* Segunda fila del menú principal */
+    margin-top: 10px;
 }
 
 #menu ul li a {
+    display: inline-block;
+    padding: 0.54rem 1.08rem;
+    font-size: 0.7875rem;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f3eeee;
+    color: #054c8a;
+    border: 2px solid #054c8a;
+    border-radius: 4px;
     text-decoration: none;
-    font-size: 25px;
-    color: #ffffff;
-    transition: color 0.3s ease;
+    transition: background-color .25s, color .25s, transform .2s;
 }
 
-#menu ul li a:hover {
-    color: red;
+#menu ul li a:hover,
+#menu ul li a:focus {
+    background-color: #d50000;
+    color: #fff;
+    transform: scale(1.05);
 }
 
-/* Botones */
+/* ========== BOTONES (ICONOS) CAMPAÑAS → USUARIOS ========== */
+.ContIcons {
+    display: grid;                              /* 9 columnas fijas */
+    grid-template-columns: repeat(9, 1fr);
+    gap: 10px;
+    justify-content: center;                    /* Centra todo el grid */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
 .icon {
     text-align: center;
     display: flex;
@@ -55,109 +97,61 @@ body {
 
 .icon img {
     max-width: 100%;
-    height: auto;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    width: 130px;
+    height: 130px;
+    transition: transform .3s ease;
 }
 
-.icon img:hover {
-    transform: scale(1.1);
-    border-color: red;
-}
+.icon img:hover { transform: scale(1.1); }
 
 .icon a {
     text-decoration: none;
     color: #024c7e;
-    transition: color 0.3s ease;
-    margin-top: 5px; /* Espacio entre el botón y el título */
-    text-align: center;
-    display: block;
+    margin-top: 5px;
+    transition: color .3s ease;
 }
 
-.icon a:hover {
-    color: red;
-}
+.icon a:hover { color: #d50000; }
 
-/* Contenedor de íconos */
-.ContIcons {
-    display: grid;
-    grid-template-columns: repeat(9, 1fr);
-    gap: 20px;
-    justify-content: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* Segunda fila con 8 botones */
-.ContIcons .icon:nth-child(n+10) {
-    grid-column: span 1;
-}
-
-.ContIcons .icon:nth-child(10) {
-    grid-column: 2 / span 1;
-}
-
-/* Contenedor de botones flotantes */
+/* ========== BOTONES FLOTANTES ========== */
 .floating-buttons {
     position: fixed;
     bottom: 20px;
     right: 20px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     gap: 10px;
     z-index: 1000;
 }
 
-/* Estilos generales para los botones */
 .floating-buttons a {
-    width: 55.8px;
-    height: 55.8px;
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,.2);
+    transition: transform .3s ease, box-shadow .3s ease;
 }
 
-/* Botón de WhatsApp */
-#whatsapp-button {
-    background-color: #25D366;
-}
-
-/* Botón de Chat */
-#chat-button {
-    background-color: #093764;
-}
-
-/* Efecto hover */
 .floating-buttons a:hover {
     transform: scale(1.2);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 12px rgba(0,0,0,.3);
 }
 
-/* Estilos para las imágenes dentro de los botones */
-.floating-buttons a img {
-    width: 80%;
-    height: 80%;
-    border-radius: 50%;
-}
+.floating-buttons img { width: 80%; height: 80%; border-radius: 50%; }
 
-/* Responsividad */
+/* Centrar segunda fila de iconos (Diccionario → Usuarios y Contraseñas) */
+.ContIcons .icon:nth-child(10) { grid-column: 2 / span 1; }
+
+/* ========== RESPONSIVE BREAKPOINTS ========== */
 @media (max-width: 1024px) {
-    .ContIcons {
-        grid-template-columns: repeat(5, 1fr);
-    }
+    .ContIcons { grid-template-columns: repeat(5, 1fr); }
+    #menu ul { max-width: 90%; }
 }
 
 @media (max-width: 768px) {
-    .ContIcons {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .floating-buttons {
-        flex-direction: column;
-        right: 45%;
-    }
+    .ContIcons { grid-template-columns: repeat(2, 1fr); }
+    #menu ul { flex-direction: column; align-items: center; }
+    .floating-buttons { flex-direction: column; right: 45%; }
 }
