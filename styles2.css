@@ -161,3 +161,10 @@ body {
         right: 45%;
     }
 }
+ul > ul li a {
+  text-align: center; /* Centra el texto dentro del botón */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;         /* Asegura alineación vertical */
+}
