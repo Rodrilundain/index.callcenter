@@ -80,7 +80,7 @@ body {
 /* Contenedor de íconos */
 .ContIcons {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(10, 1fr);
     gap: 20px;
     justify-content: center;
     max-width: 1200px;
