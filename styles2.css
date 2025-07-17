@@ -1,168 +1,173 @@
-/* General */
+/* ---------------- VARIABLES ---------------------- */
+:root {
+  --color-bg: #054c8a;
+  --color-text: #ffffff;
+  --color-accent: red;
+  --font-main: 'Roboto', sans-serif;
+}
+
+/* ---------------- GENERAL ------------------------ */
 body {
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
+  margin: 0;
+  font-family: var(--font-main);
+  background-color: #f8f9fa;
 }
 
 #cont {
-    width: 100%;
-    background-color: #054c8a;
+  width: 100%;
+  background-color: var(--color-bg);
 }
 
-/* Encabezado */
+/* ---------------- HEADER / NAV ------------------- */
 #cont-nav {
-    max-width: 1366px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    height: 100px;
-    padding: 0 20px;
+  max-width: 1366px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  height: 100px;
+  padding: 0 20px;
 }
 
 #logo img {
-    display: block;
+  display: block;
 }
 
 #menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 #menu ul li {
-    margin: 0 10px;
+  margin: 0 5px;
 }
 
 #menu ul li a {
-    text-decoration: none;
-    font-size: 25px;
-    color: #ffffff;
-    transition: color 0.3s ease;
+  text-decoration: none;
+  font-size: 16px;
+  color: var(--color-text);
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
 }
 
 #menu ul li a:hover {
-    color: red;
+  background-color: var(--color-accent);
+  color: #fff;
 }
 
-/* Botones */
+/* ---------------- ICON GRID ----------------------- */
+.ContIcons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  max-width: 1280px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
 .icon {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.icon img {
-    max-width: 100%;
-    height: auto;
-    transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.icon img:hover {
-    transform: scale(1.1);
-    border-color: red;
+  width: 160px;
+  display: flex;
+  justify-content: center;
 }
 
 .icon a {
-    text-decoration: none;
-    color: #024c7e;
-    transition: color 0.3s ease;
-    margin-top: 5px;
-    text-align: center;
-    display: block;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+  border-radius: 16px;
+  background-color: var(--color-bg);
+  text-decoration: none;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+  height: 200px;
+  justify-content: center;
+  color: white;
+  text-align: center;
 }
 
-.icon a:hover {
-    color: red;
+.icon img {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 12px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
 }
 
-/* Contenedor de íconos */
-.ContIcons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+.icon a:hover img {
+  transform: scale(1.1);
 }
 
-/* Distribución en filas grandes */
-@media (min-width: 1025px) {
-    .ContIcons .icon {
-        width: calc((100% - 9 * 20px) / 10); /* 10 ítems en la fila 1 con 9 gaps */
-    }
-
-    .ContIcons .icon:nth-child(n+11) {
-        width: calc((100% - 7 * 20px) / 8); /* 8 ítems en la fila 2 con 7 gaps */
-    }
+.icon p {
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin: 0;
 }
 
-/* Responsividad tablet */
+/* ---------------- RESPONSIVE ---------------------- */
 @media (max-width: 1024px) {
-    .ContIcons {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-    }
-
-    .ContIcons .icon {
-        width: 100%; /* Resetear ancho en grid */
-    }
-}
-
-/* Responsividad mobile */
-@media (max-width: 768px) {
-    .ContIcons {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .floating-buttons {
-        flex-direction: column;
-        right: 45%;
-    }
-}
-
-/* Botones flotantes */
-.floating-buttons {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: flex;
-    flex-wrap: wrap;
+  .ContIcons {
     justify-content: center;
-    gap: 10px;
-    z-index: 1000;
+  }
+}
+
+@media (max-width: 768px) {
+  .ContIcons {
+    justify-content: center;
+  }
+  .floating-buttons {
+    flex-direction: column;
+    right: 45%;
+  }
+}
+
+/* ---------------- FLOATING BUTTONS ---------------- */
+.floating-buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  z-index: 1000;
 }
 
 .floating-buttons a {
-    width: 55.8px;
-    height: 55.8px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 55.8px;
+  height: 55.8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 #whatsapp-button {
-    background-color: #25D366;
+  background-color: #25D366;
 }
 
 #chat-button {
-    background-color: #093764;
+  background-color: #093764;
 }
 
 .floating-buttons a:hover {
-    transform: scale(1.2);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transform: scale(1.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .floating-buttons a img {
-    width: 80%;
-    height: 80%;
-    border-radius: 50%;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
 }
 
 ul > ul li a {
