@@ -68,7 +68,7 @@ body {
     text-decoration: none;
     color: #024c7e;
     transition: color 0.3s ease;
-    margin-top: 5px; /* Espacio entre el botón y el título */
+    margin-top: 5px;
     text-align: center;
     display: block;
 }
@@ -79,25 +79,51 @@ body {
 
 /* Contenedor de íconos */
 .ContIcons {
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
 
-/* Segunda fila con 8 botones */
-.ContIcons .icon:nth-child(n+10) {
-    grid-column: span 1;
+/* Distribución en filas grandes */
+@media (min-width: 1025px) {
+    .ContIcons .icon {
+        width: calc((100% - 9 * 20px) / 10); /* 10 ítems en la fila 1 con 9 gaps */
+    }
+
+    .ContIcons .icon:nth-child(n+11) {
+        width: calc((100% - 7 * 20px) / 8); /* 8 ítems en la fila 2 con 7 gaps */
+    }
 }
 
-.ContIcons .icon:nth-child(10) {
-    grid-column: 2 / span 1;
+/* Responsividad tablet */
+@media (max-width: 1024px) {
+    .ContIcons {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .ContIcons .icon {
+        width: 100%; /* Resetear ancho en grid */
+    }
 }
 
-/* Contenedor de botones flotantes */
+/* Responsividad mobile */
+@media (max-width: 768px) {
+    .ContIcons {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .floating-buttons {
+        flex-direction: column;
+        right: 45%;
+    }
+}
+
+/* Botones flotantes */
 .floating-buttons {
     position: fixed;
     bottom: 20px;
@@ -109,7 +135,6 @@ body {
     z-index: 1000;
 }
 
-/* Estilos generales para los botones */
 .floating-buttons a {
     width: 55.8px;
     height: 55.8px;
@@ -121,50 +146,29 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Botón de WhatsApp */
 #whatsapp-button {
     background-color: #25D366;
 }
 
-/* Botón de Chat */
 #chat-button {
     background-color: #093764;
 }
 
-/* Efecto hover */
 .floating-buttons a:hover {
     transform: scale(1.2);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Estilos para las imágenes dentro de los botones */
 .floating-buttons a img {
     width: 80%;
     height: 80%;
     border-radius: 50%;
 }
 
-/* Responsividad */
-@media (max-width: 1024px) {
-    .ContIcons {
-        grid-template-columns: repeat(5, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .ContIcons {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .floating-buttons {
-        flex-direction: column;
-        right: 45%;
-    }
-}
 ul > ul li a {
-  text-align: center; /* Centra el texto dentro del botón */
+  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;         /* Asegura alineación vertical */
+  height: 100%;
 }
